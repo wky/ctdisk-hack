@@ -68,30 +68,11 @@ document.addEventListener('DOMContentLoaded', function ()
     form.appendChild(randcode);
     form.appendChild(confirm)
     form.addEventListener('submit', function(){
-      console.log("done")
       document.body.removeChild(captcha);
       document.body.removeChild(form);
     });
-    /*
-    chrome.tabs.onUpdated.addListener(function (tabId, change, tab){
-      if (change.url){
-        prefix = "http://ctdisk.com/downhtml/" + String(file_id);
-        if (data.lastIndexOf(prefix, 0) == 0){
-          chrome.webRequest.onBeforeRequest.addListener(
-            function (details) {
-              if (details.url == change.url)
-                return {cancel:false};
-              else
-                return {cancel:true};}, 
-            {urls:["<all_urls>"], tabId:tabId},
-            ['blocking']);
-          chrome.tabs.executeScript(tab_id, {file:'send_msg.js',
-            runAt:"document_start"});
-        }
-      }
-    });*/
-
     document.body.appendChild(form);
-
+    randcode.focus();
+    localStorage.file_id = file_id;
   });
 });

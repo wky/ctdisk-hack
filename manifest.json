@@ -3,10 +3,9 @@
     "name": "CTdisk hack",
     "description": "block ads, straight to download",
     "version": "0.1",
-    /*
     "background": {
         "scripts": ["background.js"]
-    },*/
+    },
     "permissions": ["http://*/*", "tabs", "debugger", 
     "webRequest", "webRequestBlocking", "contentSettings"],
     "browser_action": {
