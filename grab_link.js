@@ -1,13 +1,23 @@
 console.log('grab link');
+
 setTimeout(function (){
-  http_dl = document.getElementById('local_free').getAttribute('href');
-  http_dl = window.atob(http_dl);
+  var http_dl = document.getElementById('local_free');
+  http_dl = window.atob(http_dl.getAttribute('href'));
+  var xunlei_dl = document.getElementsByClassName('thunder')[1];
+  xunlei_dl = xunlei_dl.getAttribute('thunderhref');
   document.body.innerHTML = "";
-  var addr = document.createElement('a');
-  addr.href = http_dl;
-  addr.target = "_blank"
-  addr.innerHTML="Here is your link";
-  document.body.appendChild(addr);
+  var http_addr = document.createElement('a');
+  http_addr.href = http_dl;
+  http_addr.target = "_blank"
+  http_addr.innerHTML="HTTP Direct Download";
+  document.body.appendChild(http_addr);
+  var br = document.createElement('br');
+  document.body.appendChild(br);
+  var xunlei_addr = document.createElement('a');
+  xunlei_addr.href = xunlei_dl;
+  xunlei_addr.target = "_blank"
+  xunlei_addr.innerHTML="Thunder(迅雷) Download";
+  document.body.appendChild(xunlei_addr);
   //localStorage.blocking = '';
 }, 100);
 
@@ -15,8 +25,4 @@ setTimeout(function (){
 function b64decode(str){
   return decodeURIComponent(escape(window.atob( str )));
 }
-function grab() {
-    console.log("bon");
-}
-setInterval(grab, 1000);
 */

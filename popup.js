@@ -29,14 +29,16 @@ document.addEventListener('DOMContentLoaded', function ()
   chrome.extension.onMessage.addListener(function (msg){
     console.log("received.");
     var hash_id = msg.hash_id;
+
     chrome.tabs.remove(tab_id);
-    /*if (!hash_id){
-      var http = b64decode(msg.http_b64);
-      chrome.tabs.create({url:http}, function (tab){
-        console.log(http);
-      });
-      return;
-    }*/
+    
+    var file_size = document.createElement('p');
+    file_size.innerHTML = msg.size;
+    var file_time = document.createElement('p');
+    file_time.innerHTML = msg.time;
+    document.body.appendChild(file_size);
+    document.body.appendChild(file_time);
+
     var captcha = document.createElement('img');
     captcha.src = "http://ctdisk.com/randcodeV2.php?fid=" + file_id;
     document.body.appendChild(captcha);

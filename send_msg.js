@@ -1,14 +1,10 @@
 console.log('send_msg.js');
 document.addEventListener('DOMContentLoaded', function (){
-  hash_tag = document.getElementById('hash_id');
-  //hash_val = '';
-  //if (hash_tag)
-  hash_val = hash_tag.value;
-  /*http_tag = document.getElementById('local_free');
-  http_dl = '';
-  if (http_tag)
-    http_dl = http_tag.href;
-  console.log(http_dl);*/
+  var hash_val = document.getElementById('hash_id').value;
+  var file_info = document.getElementsByClassName('file_info')[0];
+  var size_str = file_info.children[0].innerHTML;
+  var time_str = file_info.children[1].innerHTML;
   console.log(hash_val);
-  chrome.extension.sendMessage({hash_id:hash_val});
+  chrome.extension.sendMessage({hash_id:hash_val, size:size_str,
+    time:time_str});
 });
