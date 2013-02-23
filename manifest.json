@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "CTdisk hack",
     "description": "block ads, straight to download",
-    "version": "0.1",
+    "version": "0.2",
     "background": {
         "scripts": ["background.js"]
     },
