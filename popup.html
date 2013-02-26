@@ -3,8 +3,18 @@
     <title>ctdisk quick download</title>
     <script src='popup.js'></script>
   </head>
-  <body>
+  <body style='align: center; width:200;'>
     <input type='text' id='file_id' size='10'/>
     <button type='button' id='begin'>Submit</button>
+    <hr />
+    <p class='info' id='file_size' style='display: none;'></p>
+    <br />
+    <p class='info' id='file_time' style='display: none;'></p>
+    <img class='captcha' id='captcha_img' style='display: none;'/>
+    <input class='captcha' type='text' id='randcode' style='display: none;' size='3'/>
+    <button class='captcha' type='button' id='confirm' style='display: none;'>Comfirm</button>
+    <br />
+    <a class='download' target='_blank' id='http_dl' style='display: none;'>HTTP Direct Download</a>
+    <a class='download' target='_blank' id='xunlei_dl' style='display: none;'>Thunder(迅雷) Download</a>
   </body>
 </html>
